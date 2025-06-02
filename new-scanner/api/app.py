@@ -38,13 +38,6 @@ try:
         with open(imgbb_key_path, "r") as f:
             IMGBB_API_KEY = f.read().strip()
             print(f"ImgBB API key loaded from image_api.txt (length: {len(IMGBB_API_KEY)})")
-    else:
-        # Use a default key if file doesn't exist
-        IMGBB_API_KEY = "7e8199cdbfd21a1ed4bee61a18eb5f9b"
-        print(f"Using default ImgBB API key: {IMGBB_API_KEY}")
-        # Create the file with the default key
-        with open(imgbb_key_path, "w") as f:
-            f.write(IMGBB_API_KEY)
 except Exception as e:
     print(f"Error loading ImgBB API key: {e}")
 
@@ -55,15 +48,15 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def upload_to_imgbb(file_path):
-    """
-    Upload an image to ImgBB and return the URL
-    """
+    """Upload an image to ImgBB and return the URL."""
     try:
         with open(file_path, "rb") as f:
+            # Create proper file data with filename and content type
+            files = {"image": (os.path.basename(file_path), f, "image/jpeg")}
             response = requests.post(
                 "https://api.imgbb.com/1/upload",
-                params={"key": IMGBB_API_KEY, "expiration": 600},  # 600 = 10 min expiration
-                files={"image": f}
+                params={"key": IMGBB_API_KEY, "expiration": 60},  # 600 = 10 min expiration
+                files=files
             )
         
         if response.status_code == 200:
