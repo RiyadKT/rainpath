@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/2.0.0-beta/tooling/cli/schema.json",
+  "productName": "patient-scanner",
+  "version": "0.1.0",
+  "identifier": "com.rainpath.patient-scanner",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:3000",
+    "frontendDist": "../../out"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Patient Document Scanner",
+        "width": 1000,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "icon": [],
+    "targets": "all",
+    "category": "Productivity",
+    "copyright": "",
+    "shortDescription": "Patient document scanner",
+    "longDescription": "Analyze patient medical documents using OpenAI's Vision API"
+  },
+  "plugins": {
+    "shell": {
+      "open": true
+    }
+  }
+}

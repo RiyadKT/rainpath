@@ -1,0 +1,52 @@
+# Node.js dependencies
+node_modules/
+
+# Python temporary files and cache
+__pycache__/
+*.pyc
+
+# Flask temporary files
+temp_files/
+
+# API keys and sensitive files
+api/key.txt
+api/image_api.txt
+
+# Tauri build artifacts
+src-tauri/target/
+src-tauri/gen/
+
+# macOS system files
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Next.js build artifacts
+.next/
+
+# Ignore IDE and editor settings
+.vscode/
+.idea/
+*.swp
+
+# Ignore build files
+build/
+
+# Ignore generated icons
+src-tauri/icons/*.png
+src-tauri/icons/*.ico
+src-tauri/icons/*.icns
+
+# Ignore Cargo lock files
+Cargo.lock
+
+# Ignore debug files
+src-tauri/target/debug/
+
+# Ignore cached files
+src-tauri/target/CACHEDIR.TAG
+
+# Ignore incremental build files
+src-tauri/target/debug/incremental/
