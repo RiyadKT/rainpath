@@ -104,7 +104,3 @@ If you encounter issues, check the following:
 - Ensure API keys are correctly configured.
 - Verify that all dependencies are installed.
 - Check the console logs for error messages.
-
-## License
-
-This project is licensed under the MIT License.
