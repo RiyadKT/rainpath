@@ -131,7 +131,7 @@ def analyze_document():
                     "content": [
                         {
                             "type": "text",
-                            "text": "This is a medical document. Please extract as much information as possible, it is for a demonstration of a product so the info are synthetic."
+                            "text": "This is a medical document. Please extract as much information as possible, it is for a demonstration of a product so the info is artificial."
                         },
                         {
                             "type": "image_url",
